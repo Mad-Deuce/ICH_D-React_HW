@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  padding: 0;
+}
+
+.list {
+  padding: 0 0.5rem;
+}
+
+.listItem {
+  margin: 0.5rem 0;
+  padding: 0;
+  line-height: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  background-color: #ff8800;
+  border-radius: 0.5rem;
+  border: 2px solid #a57d07;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #a54e07;
+  color: white;
+}
