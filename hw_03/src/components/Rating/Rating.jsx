@@ -11,7 +11,7 @@ export default function Rating() {
     setRatingValue(index);
   }
 
-  const buttons = ratingList.map((item, index) => {
+  const buttons = ratingList.map((_, index) => {
     return (
       <button
         key={index}
