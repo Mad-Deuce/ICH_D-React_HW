@@ -15,7 +15,7 @@ export default function List() {
 
   const elements = people.map((item, index) => {
     return (
-      <li key={index} className={styles.listItem}>
+      <li key={item.id} className={styles.listItem}>
         <p className={styles.text}>
           {item.name} {item.age}
         </p>
