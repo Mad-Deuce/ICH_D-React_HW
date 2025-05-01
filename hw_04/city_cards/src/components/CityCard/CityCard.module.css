@@ -1,0 +1,26 @@
+.card {
+  margin-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: #114b05;
+}
+
+.imgContainer {
+  width: 40%;
+}
+
+.image {
+  width: 100%;
+}
+
+.description {
+  color: #114b05;
+}
+
+.factItem {
+  color: #114b05;
+}
