@@ -1,12 +1,45 @@
-# React + Vite
+#### React Домашнее задание 5
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Задание 1
 
-Currently, two official plugins are available:
+Создание простого React приложения по [макету в Figma](https://www.figma.com/file/RGuJf4CM436YyPOhXzLQCW/Untitled?type=design&node-id=0-1&mode=design&t=v2nP6kXa2v19QGwW-0)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Цель задания
 
-## Expanding the ESLint configuration
+Цель данного задания - разработать приложение на React, внешний вид которого полностью соответствует предложенному макету в Figma. Это задание поможет улучшить навыки работы с React, а также с популярным инструментом дизайна.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Шаги выполнения
+
+Шаг 1: Создание нового React приложения
+
+1. Откройте терминал и создайте новый проект React при помощи create-react-app:
+
+Шаг 2: Ознакомление с макетом Figma
+
+1. Изучите предоставленный макет в Figma. Обратите внимание на компоновку, размеры, цвета, шрифты и другие визуальные детали.
+2. Если в макете используются специфические шрифты, изображения или элементы оформления, экспортируйте их.
+
+Шаг 3: Подготовка проекта
+
+1. Удалите все ненужные файлы из проекта (например, логотип React и стили, связанные с ним).
+2. Структурируйте ваш проект, создав папки для компонентов, стилей и изображений:
+
+   - src/components - для React компонентов.
+   - src/styles - для CSS файлов.
+   - src/assets - для изображений.
+
+Шаг 4: Верстка компонентов
+
+1. Создайте базовые React компоненты, на основе разделения макета на части.
+2. Примените стили согласно макету, используя CSS или предпочтительный вами CSS-препроцессор.
+
+Шаг 5: Адаптивность и интерактивность
+
+1. Убедитесь, что ваше приложение корректно отображается на различных устройствах. Задайте медиа-запросы при необходимости.
+
+Шаг 6: Тестирование
+
+1. Проведите тестирование компонентов на соответствие макету.
+2. Проверьте работоспособность приложения на разных браузерах и устройствах.
+
+![](https://lh7-eu.googleusercontent.com/HmvGaTggbQxeNzwAVueit9IGTpCi_waomSYDmHtPG4BX9gGxDRCS0RHyRpMS1GxGU0v4gzXeUTwDIgdK3QT1_VeYTGmjL0R1Y2Z3hR8tu-Rk6hvlenaTbk0el_7N_s5v3-uBYmCMFAiI87bwzw-cdNc)
