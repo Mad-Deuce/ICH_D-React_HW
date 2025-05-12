@@ -1,0 +1,10 @@
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: var(--bgd-color);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+}
