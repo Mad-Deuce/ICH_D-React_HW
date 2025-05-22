@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-import langs from "/src/data/langs";
+import langs from "./langs";
 
 export const langContext = createContext([]);
 
@@ -8,7 +8,7 @@ export default function LangProvider({ children }) {
   const [currentLang, setCurrentLang] = useState(langs[0]);
 
   const switchLang = (key) => {
-    setCurrentLang(langs.find((item) => item.key === key));
+    setCurrentLang(langs.find((item) => item === key));
   };
 
   return (

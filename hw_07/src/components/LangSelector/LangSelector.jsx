@@ -1,22 +1,23 @@
 import { useContext } from "react";
 
 import { langContext } from "/src/context/LangProvider";
+import locale from "/src/locale/langSelectorLocale.js";
 
 import styles from "./LangSelector.module.css";
 
 export default function LangSelector() {
-  const langCtx = useContext(langContext);
+  const { langs, switchLang } = useContext(langContext);
 
-  const options = langCtx.langs.map(({ key, title }) => (
-    <option key={key} value={key}>
-      {title}
+  const options = langs.map((item) => (
+    <option key={item} value={item}>
+      {locale[item].value}
     </option>
   ));
 
   return (
     <select
       className={styles.select}
-      onChange={() => langCtx.switchLang(event.target.value)}
+      onChange={() => switchLang(event.target.value)}
     >
       {options}
     </select>
