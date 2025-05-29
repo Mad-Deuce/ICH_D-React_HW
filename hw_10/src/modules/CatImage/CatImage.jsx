@@ -25,7 +25,7 @@ export default function CatImage() {
           console.log(error);
           setError(error);
         })
-        .finally(setLoading(false));
+        .finally(() => setLoading(false));
     };
     fetchData();
   }, [update]);
@@ -43,7 +43,11 @@ export default function CatImage() {
         </>
       )}
       {loading && <p className={styles.loading}>loading...</p>}
-      {error && <p className={styles.error}>{error.message}</p>}
+      {error && (
+        <p className={styles.error}>
+          {error.message || error.response.data.message}
+        </p>
+      )}
     </div>
   );
 }
