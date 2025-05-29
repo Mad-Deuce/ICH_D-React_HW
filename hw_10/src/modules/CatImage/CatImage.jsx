@@ -1,29 +1,12 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-
 import Button from "/src/shared/components/Button/Button";
 import ImgView from "/src/shared/components/ImgView/ImgView";
 
-import { fetchCatApi } from "/src/shared/api/catApi";
+import { useFetch } from "/src/shared/hooks/useFetch";
 
 import styles from "./CatImage.module.css";
 
 export default function CatImage() {
-  const [state, setState] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [update, setUpdate] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const { data, error } = await fetchCatApi();
-      setLoading(false);
-      if (data) return setState(data);
-      setError(error);
-    };
-    fetchData();
-  }, [update]);
+  const { state, loading, error, setUpdate } = useFetch(null);
 
   return (
     <div className={styles.wrapper}>

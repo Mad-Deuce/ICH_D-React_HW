@@ -1,23 +1,31 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const useFetch = ({ request, initialState }) => {
+import { fetchCatApi } from "/src/shared/api/catApi";
+
+export const useFetch = (initialState) => {
   const [state, setState] = useState(initialState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [update, setUpdate] = useState(false);
 
   useEffect(() => {
-    const fetchItems = async () => {
+    const fetchData = async () => {
       setLoading(true);
-      const { data, error } = await request();
+      const { data, error } = await fetchCatApi();
       setLoading(false);
       if (data) return setState(data);
-      setError(error.response?.data?.message || error.message);
+      setError(error);
     };
+    fetchData();
+  }, [update]);
 
-    fetchItems();
-  }, [request]);
-
-  return { state, setState, loading, setLoading, error, setError };
+  return {
+    state,
+    setState,
+    loading,
+    setLoading,
+    error,
+    setError,
+    setUpdate,
+  };
 };
-
-export default useFetch;
