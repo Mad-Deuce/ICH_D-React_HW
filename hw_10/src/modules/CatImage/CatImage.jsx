@@ -4,6 +4,8 @@ import axios from "axios";
 import Button from "/src/shared/components/Button/Button";
 import ImgView from "/src/shared/components/ImgView/ImgView";
 
+import { fetchCatApi } from "/src/shared/api/catApi";
+
 import styles from "./CatImage.module.css";
 
 export default function CatImage() {
@@ -13,35 +15,24 @@ export default function CatImage() {
   const [update, setUpdate] = useState(false);
 
   useEffect(() => {
-    const fetchData = () => {
+    const fetchData = async () => {
       setLoading(true);
-      axios
-        .get("https://api.thecatapi.com/v1/images/search")
-        .then((response) => {
-          console.log(response.data[0]);
-          setState(response.data[0].url);
-          setError(null);
-        })
-        .catch((error) => {
-          console.log(error);
-          setState(null);
-          setError(error);
-        })
-        .finally(() => setLoading(false));
+      const { data, error } = await fetchCatApi();
+      setLoading(false);
+      if (data) return setState(data);
+      setError(error);
     };
     fetchData();
   }, [update]);
-
-  const handleClick = () => {
-    setUpdate((prev) => !prev);
-  };
 
   return (
     <div className={styles.wrapper}>
       {!loading && (
         <>
-          <ImgView src={state} />
-          <Button handleClick={handleClick}>Next image</Button>
+          <ImgView src={state?.url} />
+          <Button handleClick={() => setUpdate((prev) => !prev)}>
+            Next image
+          </Button>
         </>
       )}
       {loading && <p className={styles.loading}>loading...</p>}
