@@ -20,9 +20,11 @@ export default function CatImage() {
         .then((response) => {
           console.log(response.data[0]);
           setState(response.data[0].url);
+          setError(null);
         })
         .catch((error) => {
           console.log(error);
+          setState(null);
           setError(error);
         })
         .finally(() => setLoading(false));
