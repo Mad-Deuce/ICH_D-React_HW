@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { fetchCatApi } from "/src/shared/api/catApi";
+import { decoratedFetchCatApi } from "/src/shared/api/catApi";
 
 export const useFetch = (initialState) => {
   const [state, setState] = useState(initialState);
@@ -11,7 +11,8 @@ export const useFetch = (initialState) => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const { data, error } = await fetchCatApi();
+      setError(null);
+      const { data, error } = await decoratedFetchCatApi();
       setLoading(false);
       if (data) return setState(data);
       setError(error);

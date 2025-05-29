@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import { requestDecorator } from "/src/shared/lib/requestDecorator"
+
 const catInstance = axios.create({
     baseURL: "https://api.thecatapi.com/v1/images/search"
 })
@@ -13,3 +15,4 @@ export const fetchCatApi = async () => {
     }
 };
 
+export const decoratedFetchCatApi = requestDecorator(() => catInstance.get('/'));

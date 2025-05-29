@@ -21,7 +21,7 @@ export default function CatImage() {
       {loading && <p className={styles.loading}>loading...</p>}
       {error && (
         <p className={styles.error}>
-          {error.message || error.response.data.message}
+          {error.message || error.response?.data?.message}
         </p>
       )}
     </div>
