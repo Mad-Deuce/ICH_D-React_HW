@@ -16,3 +16,7 @@
 .error {
     color: red;
 }
+
+.button{
+    border: 1px solid #cccccc;
+}
