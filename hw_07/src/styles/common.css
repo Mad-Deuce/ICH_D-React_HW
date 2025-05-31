@@ -1,0 +1,13 @@
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
