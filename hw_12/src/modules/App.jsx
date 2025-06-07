@@ -22,7 +22,6 @@ export default function App() {
         handleChange={handleChange}
         type="text"
         placeholder="placeholder"
-        handleChange={handleChange}
       />
       <ValueDisplay
         currentValue={currentValue}
