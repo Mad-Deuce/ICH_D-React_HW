@@ -12,26 +12,26 @@ import "/src/shared/styles/styles.css";
 export default function App() {
   const allUsers = useSelector(selectAllUsers);
   const [users, setUsers] = useState(allUsers);
-  const [filter, setFilter] = useState("");
+  const [filterValue, setFilterValue] = useState("");
 
   const filterUsers = useCallback(() => {
     const filteredUsers = allUsers.filter(({ name }) =>
-      name.toUpperCase().includes(filter.trim().toUpperCase())
+      name.toUpperCase().includes(filterValue.trim().toUpperCase())
     );
     setUsers(filteredUsers);
-  }, [filter, allUsers]);
+  }, [filterValue, allUsers]);
 
   useMemo(() => {
-    filterUsers(filter);
-  }, [filter, filterUsers]);
+    filterUsers(filterValue);
+  }, [filterValue, filterUsers]);
 
   useEffect(() => {
     filterUsers();
-  }, [filter, filterUsers]);
+  }, [filterValue, filterUsers]);
 
   return (
     <Container>
-      <Filter setFilter={setFilter} />
+      <Filter setFilter={setFilterValue} />
       <UserList users={users} />
     </Container>
   );
