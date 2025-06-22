@@ -1,0 +1,20 @@
+.wrapper {
+  padding: 1rem;
+  position: absolute;
+  background-color: aliceblue;
+  width: var(--input-width);
+}
+
+.list {
+  width: 100%;
+}
+
+.user {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.user:hover {
+  font-weight: 600;
+  background-color: rgb(221, 235, 247);
+}
