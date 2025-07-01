@@ -26,7 +26,7 @@ export default function App() {
       <ValueDisplay
         currentValue={currentValue}
         previousValue={previousValue.current}
-      ></ValueDisplay>
+      />
     </Container>
   );
 }
