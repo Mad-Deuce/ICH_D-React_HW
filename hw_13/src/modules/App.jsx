@@ -5,7 +5,7 @@ import UserItem from "/src/shared/components/UserItem/UserItem";
 
 import "/src/shared/styles/styles.css";
 
-function App() {
+export default function App() {
   return (
     <Container>
       <UserItem />
@@ -14,5 +14,3 @@ function App() {
     </Container>
   );
 }
-
-export default App;
