@@ -8,7 +8,7 @@ import "/src/shared/styles/styles.css";
 export default function App() {
   return (
     <Container>
-      <Title >User Profile</Title>
+      <Title>User Profile</Title>
       <User />
       <UserForm />
     </Container>
