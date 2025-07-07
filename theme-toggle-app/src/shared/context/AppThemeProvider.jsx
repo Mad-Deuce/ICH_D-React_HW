@@ -11,9 +11,11 @@ export default function AppThemeProvider({ children }) {
     setThemePaletteMode((prev) => (prev === "light" ? "dark" : "light"));
   };
 
-  const currentTheme = createTheme({
+  let currentTheme = createTheme({
     palette: { mode: themePaletteMode },
   });
+  currentTheme.palette.background.default =
+    themePaletteMode === "dark" ? "#007" : "#070";
 
   return (
     <themePaletteModeContext.Provider value={{ themePaletteMode, toggleTheme }}>
