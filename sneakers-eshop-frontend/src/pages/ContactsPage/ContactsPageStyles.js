@@ -9,9 +9,9 @@ export const textStyles = css`
 export const inputStyles = css`
     margin-block: 1rem;
     & * {
-    color: #00000070;
-    background-color: #FAFAFA;
-    border: none;
+        color: #00000070;
+        background-color: #FAFAFA;
+        border: none;
     }
 `;
 
