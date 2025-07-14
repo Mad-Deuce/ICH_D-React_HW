@@ -7,12 +7,14 @@ export const textStyles = css`
 `;
 
 export const inputStyles = css`
-    margin-block: 1rem;
-    & * {
+    & .MuiInputBase-root {
         color: #00000070;
         background-color: #FAFAFA;
-        border: none;
     }
+    & fieldset {
+        border: none
+    }
+
 `;
 
 export const buttonStyles = css`
@@ -20,4 +22,6 @@ export const buttonStyles = css`
     background-color: #000;
     border-radius: 0.5rem;
     border: none;
+    margin-top: 1rem;
 `;
+

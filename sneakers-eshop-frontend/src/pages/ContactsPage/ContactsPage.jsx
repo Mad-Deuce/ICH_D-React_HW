@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { Link } from "react-router-dom";
@@ -27,14 +27,13 @@ import { textStyles, inputStyles, buttonStyles } from "./ContactsPageStyles";
 const ContactsPage = () => {
   const {
     register,
-    control,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm({
     defaultValues,
-    // resolver: yupResolver(registerSchema),
-    mode: "onSubmit",
+    resolver: yupResolver(registerSchema),
+    mode: "onChange",
   });
 
   const onSubmit = (values) => {
@@ -49,38 +48,43 @@ const ContactsPage = () => {
       <Typography css={textStyles}>- email@example@email.com</Typography>
       <Stack direction="row" spacing={2} sx={{ marginTop: "4rem" }}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Stack direction="row" spacing={1}>
-            {/* <Controller
-              name="email"
-              control={control}
-              render={({ field }) => (
-                <TextField
-                  {...field}
-                  // {...register("email")}
-                  {...fields.email}
-                  error={errors.email}
-                  css={inputStyles}
-                  sx={{ width: "22rem" }}
-                ></TextField>
-              )}
-            />
-            </Controller> */}
+          <Stack direction="column" spacing={2}>
+            <Stack direction="row" spacing={2}>
+              <TextField
+                {...register("email")}
+                {...fields.email}
+                error={errors.email}
+                helperText={errors.email?.message}
+                css={inputStyles}
+                sx={{ width: "22rem" }}
+              />
+              <TextField
+                {...register("username")}
+                {...fields.username}
+                error={errors.username}
+                 helperText={errors.username?.message}
+                css={inputStyles}
+                sx={{ width: "22rem" }}
+              />
+            </Stack>
 
             <TextField
-              {...register("username")}
-              // {...fields.username}
+              {...register("text")}
+              {...fields.text}
+              error={errors.text}
+               helperText={errors.text?.message}
+              multiline
+              rows={4}
+              fullWidth
               css={inputStyles}
-              sx={{ width: "22rem" }}
-            ></TextField>
+              sx={{ marginBottom: "2rem" }}
+            />
           </Stack>
-
-          <TextField
-            {...fields.text}
-            multiline
-            rows={4}
-            fullWidth
-            css={inputStyles}
-          ></TextField>
+          <Stack direction="row" justifyContent="end">
+            <Button type="submit" variant="contained" css={buttonStyles}>
+              Отправить
+            </Button>
+          </Stack>
         </form>
         <Box sx={{ paddingInline: "4rem" }}>
           <Typography
@@ -115,11 +119,7 @@ const ContactsPage = () => {
           alignItems: "center",
           marginBlock: "2rem",
         }}
-      >
-        <Button type="submit" variant="contained" css={buttonStyles}>
-          Отправить
-        </Button>
-      </Stack>
+      ></Stack>
     </Container>
   );
 };
