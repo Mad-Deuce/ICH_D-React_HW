@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content {
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.author {
+  font-weight: 600;
+}

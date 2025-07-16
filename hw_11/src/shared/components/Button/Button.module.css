@@ -1,0 +1,11 @@
+.button {
+  padding: 0.5rem 2rem;
+  border: none;
+  background-color: rgb(198, 235, 235);
+  max-width: 8rem;
+}
+
+.button:hover {
+  background-color: rgb(100, 148, 148);
+  color: #fff;
+}
