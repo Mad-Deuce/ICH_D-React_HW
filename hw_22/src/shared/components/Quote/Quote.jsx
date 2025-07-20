@@ -8,7 +8,6 @@ import styles from "./Quote.module.css";
 
 export default function Quote() {
   const { quote, loading, error } = useSelector(quoteSelector);
-  // console.log(error);
 
   const dispatch = useDispatch();
 
@@ -18,9 +17,15 @@ export default function Quote() {
 
   return (
     <div className={styles.wrapper}>
-      {quote && <p>quote...</p>}
-      {loading && <p>loading...</p>}
-      {error && <p>{error}</p>}
+      <h1 className={styles.title}>Random Quote Generator</h1>
+      {quote && (
+        <>
+          <p className={styles.quote}>"{quote.q}"</p>
+          <p className={styles.author}>- {quote.a}</p>
+        </>
+      )}
+      {loading && <p className={styles.loading}>loading...</p>}
+      {error && <p className={styles.error}>{error}</p>}
     </div>
   );
 }

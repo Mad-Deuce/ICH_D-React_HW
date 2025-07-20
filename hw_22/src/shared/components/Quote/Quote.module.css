@@ -1,1 +1,28 @@
-.wrapper {}
+.wrapper {
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.quote {
+  margin: 1rem;
+}
+
+.author {
+  font-size: 1.25rem;
+  text-align: right;
+}
+
+.loading {
+  text-align: center;
+  color: blue;
+  margin-block: 2rem;
+}
+
+.error {
+  color: red;
+  margin-block: 2rem;
+  font-size: 0.75rem;
+}
