@@ -1,12 +1,67 @@
-# React + Vite
+#### React Домашнее задание 22
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### 
 
-Currently, two official plugins are available:
+                  Домашняя работа 22
+[src (47)](https://drive.google.com/drive/folders/17UccM6vHQU1DiPLWIIyL83dyYdEBrIVL?usp=sharing)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+** Задание**
 
-## Expanding the ESLint configuration
+Создание приложения для получения случайных цитат:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Создание нового React-приложения
+
+Создайте новое React-приложение.
+
+Установите Redux Toolkit, React Redux и Axios, выполнив команду \`npm install @reduxjs/toolkit react-redux redux axios\`.
+
+2. Настройка структуры проекта
+
+В папке \`src\` создайте папку \`features\`. В этой папке будут храниться все срезы состояния (slices).
+
+Внутри папки \`features\` создайте папку \`quote\`. В этой папке будет храниться срез состояния для цитат.
+
+3. Создание среза состояния для цитат
+
+В папке \`quote\` создайте файл \`quoteSlice.js\`:
+
+* Определите начальное состояние, которое будет содержать текущую цитату, автора, статус загрузки и ошибки.
+* Используйте функцию \`createAsyncThunk\` из Redux Toolkit для создания асинхронного действия (thunk), которое будет отправлять запрос к Quotes REST API для получения случайной цитаты ([https://zenquotes.io/api/random](https://zenquotes.io/api/random)).
+* Создайте срез состояния с помощью \`createSlice\` из Redux Toolkit, определяя в нем обработчики для асинхронного действия, чтобы обновлять состояние в зависимости от статуса запроса (в процессе загрузки, успешно выполнен, произошла ошибка).
+
+4. Настройка Redux Store
+
+В корне папки \`src\` создайте файл \`store.js\`.
+
+Сконфигурируйте Redux Store с использованием \`configureStore\` из Redux Toolkit и подключите созданный срез состояния для цитат.
+
+5. Настройка провайдера Redux
+
+В файле \`index.js\` импортируйте \`Provider\` из \`react-redux\` и подключите Redux Store к приложению, обернув компонент \`App\` в \`Provider\`.
+
+6. Создание компонентов
+
+Создайте компонент для отображения цитат:
+
+* В папке \`src/components\` создайте файл \`Quote.js\`.
+* В этом компоненте используйте \`useDispatch\` и \`useSelector\` из \`react-redux\` для отправки асинхронного действия и доступа к состоянию.
+* При первом рендере компонента выполните запрос для получения случайной цитаты с помощью \`useEffect\`.
+* Создайте функцию-обработчик для загрузки новой цитаты при нажатии на кнопку.
+
+Создайте главный компонент приложения:
+
+* В папке \`src\` создайте файл \`App.js\`.
+* В этом компоненте отобразите заголовок и компонент \`Quote\`.
+
+7. Стилизация приложения \*
+
+Создайте файлы стилей для компонентов:
+
+* Используйте CSS-модули для стилизации компонентов. Создайте файлы стилей с расширением \`.module.css\` для каждого компонента (например, \`Quote.module.css\`).
+* Определите стили для элементов внутри этих файлов.
+
+Примените стили в компонентах:
+
+* Импортируйте созданные стили в компоненты и примените их к элементам, используя объект стилей.
+
+![](https://lh7-qw.googleusercontent.com/docsz/AD_4nXevFdRkVmYvqr_n8uDKPPo3uNow5ode8oqjrQnpGFPdz6He3TXOO7UUlrztlsbqtWSSMebeoVcRWv5Y5tQ4Kl07aOD2MSl1YPYiHdWxA4DdwIOtAus1bYb9a5jp7xR-n5R3CYjwsGvyetr6bYpo5SuBzAPD?key=twuNx-V1vaFqS8OlrHaR-g)
