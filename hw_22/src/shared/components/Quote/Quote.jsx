@@ -15,6 +15,10 @@ export default function Quote() {
     dispatch(fetchQuoteThunk());
   }, [dispatch]);
 
+  const handleClick = () => {
+    dispatch(fetchQuoteThunk());
+  };
+
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.title}>Random Quote Generator</h1>
@@ -26,6 +30,9 @@ export default function Quote() {
       )}
       {loading && <p className={styles.loading}>loading...</p>}
       {error && <p className={styles.error}>{error}</p>}
+      <button className={styles.button} onClick={handleClick}>
+        New Quote
+      </button>
     </div>
   );
 }
